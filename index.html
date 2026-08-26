@@ -1,10 +1,564 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temirlan — Unity Developer & 3D Artist</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f1115;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 17, 21, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #252932;
+    }
+
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #c6c9cf;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      color: #9ba3af;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.02;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: #b8bdc7;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 9px;
+      border: 1px solid #343944;
+      background: #1b1f27;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #252a34;
+    }
+
+    .button.primary {
+      background: #f3f3f3;
+      color: #111318;
+      border-color: #f3f3f3;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: #969da8;
+      margin-bottom: 34px;
+      max-width: 700px;
+    }
+
+    .project {
+      background: #16191f;
+      border: 1px solid #262b35;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16 / 8;
+      object-fit: cover;
+      background: #222630;
+    }
+
+    .project-content {
+      padding: 26px;
+    }
+
+    .project-content h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .project-content p {
+      color: #aeb4be;
+      margin-bottom: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      background: #232833;
+      color: #cbd0d8;
+      border: 1px solid #343a46;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #16191f;
+      border: 1px solid #262b35;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: #aeb4be;
+      font-size: 15px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 10px 14px;
+      border: 1px solid #303641;
+      background: #171a20;
+      border-radius: 10px;
+      color: #c7ccd4;
+    }
+
+    .about-box {
+      background: #16191f;
+      border: 1px solid #262b35;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .about-box p {
+      color: #b1b7c1;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      padding: 50px 0;
+      border-top: 1px solid #252932;
+      color: #8f96a0;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 70px 0;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Temirlan — Unity Developer & 3D Artist</h1>
-    <p>My portfolio is coming soon.</p>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">TEMIRLAN</div>
+
+      <div class="nav-links">
+        <a href="#game">Game</a>
+        <a href="#models">3D Models</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Unity Developer • 3D Artist</div>
+
+      <h1>I create games and game-ready 3D assets.</h1>
+
+      <p>
+        Unity developer and 3D artist focused on gameplay programming,
+        character creation, modeling, retopology, rigging and animation.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="#game">View My Game</a>
+        <a class="button" href="#models">View 3D Models</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="game">
+      <div class="container">
+
+        <h2 class="section-title">Featured Game</h2>
+        <p class="section-subtitle">
+          My main game project created in Unity.
+        </p>
+
+        <article class="project">
+
+          <!-- ЗАМЕНИ НА СВОЙ СКРИНШОТ -->
+          <img
+            class="project-image"
+            src="images/game-cover.jpg"
+            alt="Game Screenshot"
+          />
+
+          <div class="project-content">
+
+            <h3>My Game Project</h3>
+
+            <p>
+              A short description of your game. Explain the genre,
+              the main gameplay idea and what makes the project interesting.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+              <span class="tag">Gameplay Programming</span>
+              <span class="tag">UI</span>
+              <span class="tag">Game Design</span>
+            </div>
+
+            <div class="buttons">
+
+              <!-- ЗАМЕНИ ССЫЛКИ -->
+              <a class="button primary" href="#" target="_blank">
+                Watch Gameplay
+              </a>
+
+              <a class="button" href="#" target="_blank">
+                Download Game
+              </a>
+
+              <a class="button" href="#" target="_blank">
+                GitHub
+              </a>
+
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="models">
+      <div class="container">
+
+        <h2 class="section-title">3D Models</h2>
+
+        <p class="section-subtitle">
+          Selected game-ready models created in Blender.
+        </p>
+
+        <div class="grid">
+
+          <article class="card">
+
+            <!-- ЗАМЕНИ ФОТО -->
+            <img src="images/model-ant.jpg" alt="Ant Character">
+
+            <div class="card-content">
+              <h3>Stylized Ant Character</h3>
+              <p>
+                Game-ready character created in Blender.
+                Modeling, sculpting, retopology, UV, baking,
+                texturing, rigging and animation.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Blender</span>
+                <span class="tag">7K Tris</span>
+                <span class="tag">Rigged</span>
+                <span class="tag">Game Ready</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <img src="images/model-2.jpg" alt="3D Model">
+
+            <div class="card-content">
+              <h3>3D Model #2</h3>
+
+              <p>
+                Add a short description here:
+                what you modeled and what parts of the pipeline you completed.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Blender</span>
+                <span class="tag">Low Poly</span>
+                <span class="tag">Textured</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <img src="images/model-3.jpg" alt="3D Model">
+
+            <div class="card-content">
+              <h3>3D Model #3</h3>
+
+              <p>
+                Add information about modeling, topology,
+                textures, materials or animation.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Modeling</span>
+                <span class="tag">Retopology</span>
+                <span class="tag">Baking</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <img src="images/model-4.jpg" alt="3D Model">
+
+            <div class="card-content">
+              <h3>3D Model #4</h3>
+
+              <p>
+                Another strong work from your portfolio.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Blender</span>
+                <span class="tag">Rigging</span>
+                <span class="tag">Animation</span>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+
+        <h2 class="section-title">Skills</h2>
+
+        <p class="section-subtitle">
+          Tools and areas I work with.
+        </p>
+
+        <div class="skills">
+          <span class="skill">Unity</span>
+          <span class="skill">C#</span>
+          <span class="skill">Blender</span>
+          <span class="skill">3D Modeling</span>
+          <span class="skill">Sculpting</span>
+          <span class="skill">Retopology</span>
+          <span class="skill">UV Mapping</span>
+          <span class="skill">Normal Baking</span>
+          <span class="skill">Texturing</span>
+          <span class="skill">Rigging</span>
+          <span class="skill">Animation</span>
+          <span class="skill">Git</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-box">
+
+          <p>
+            I am a Unity developer and 3D artist interested in game development.
+            I enjoy both programming gameplay systems and creating game-ready
+            assets in Blender.
+          </p>
+
+          <p>
+            I am looking for opportunities in game development as a
+            Unity Developer, 3D Artist or related junior position.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+
+        <h2 class="section-title">Contact</h2>
+
+        <p class="section-subtitle">
+          Feel free to contact me about game development opportunities.
+        </p>
+
+        <div class="buttons">
+
+          <!-- ЗАМЕНИ -->
+          <a class="button primary" href="mailto:YOUR_EMAIL@gmail.com">
+            Email
+          </a>
+
+          <a class="button" href="#" target="_blank">
+            LinkedIn
+          </a>
+
+          <a class="button" href="#" target="_blank">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Temirlan. Game Development Portfolio.
+    </div>
+  </footer>
+
 </body>
 </html>
