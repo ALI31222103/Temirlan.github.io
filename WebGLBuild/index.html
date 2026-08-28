@@ -9,25 +9,45 @@
     <link rel="stylesheet" href="TemplateData/style.css">
 
     <style>
-        html, body {
-            background: #0b0d10 !important;
-            margin: 0;
-            padding: 0;
-        }
+    html, body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: #0b0d10 !important;
+        color: #f2f2f2 !important;
+    }
 
-        #unity-container {
-            background: #0b0d10 !important;
-        }
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
 
-        #unity-canvas {
-            background: #0b0d10 !important;
-        }
+    #unity-container.unity-desktop {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        background-color: #0b0d10 !important;
+    }
 
-        #unity-footer {
-            background: #0b0d10 !important;
-            color: #f2f2f2 !important;
-        }
-    </style>
+    #unity-container {
+        background-color: #0b0d10 !important;
+    }
+
+    #unity-canvas {
+        background-color: #0b0d10 !important;
+    }
+
+    #unity-footer {
+        background-color: #0b0d10 !important;
+        color: #f2f2f2 !important;
+    }
+
+    #unity-build-title {
+        color: #f2f2f2 !important;
+    }
+</style>
 </head>
   <body>
     <div id="unity-container" class="unity-desktop">
