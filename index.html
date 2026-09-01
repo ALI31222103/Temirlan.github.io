@@ -347,6 +347,71 @@
             border-top: 1px solid #272c34;
         }
 
+        .commercial-render {
+            margin-top: 18px;
+        }
+
+        .plate-gallery {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .plate-gallery a {
+            display: block;
+            background: #0d1014;
+            border: 1px solid #272c34;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.2s ease;
+        }
+
+        .plate-gallery a:hover {
+            border-color: #535c68;
+            transform: translateY(-3px);
+        }
+
+        .plate-gallery img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: contain;
+            background: #090b0e;
+        }
+
+        .plate-gallery figcaption {
+            padding: 11px 13px;
+            color: #aeb5bf;
+            font-size: 13px;
+            border-top: 1px solid #272c34;
+        }
+
+        .commercial-render a {
+            display: block;
+            background: #0d1014;
+            border: 1px solid #272c34;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.2s ease;
+        }
+
+        .commercial-render a:hover {
+            border-color: #535c68;
+            transform: translateY(-3px);
+        }
+
+        .commercial-render img {
+            width: 100%;
+            height: auto;
+        }
+
+        .commercial-render figcaption {
+            padding: 13px 16px;
+            color: #aeb5bf;
+            font-size: 14px;
+            border-top: 1px solid #272c34;
+        }
+
         /* =========================
            OTHER WORK
         ========================= */
@@ -495,6 +560,10 @@
             }
 
             .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .plate-gallery {
                 grid-template-columns: 1fr;
             }
 
@@ -966,10 +1035,104 @@
 
 
 
+        <!-- COMMERCIAL PRODUCT MODELS -->
+
+        <article class="model-project">
+
+            <div class="model-grid">
+
+                <div class="viewer">
+
+                    <iframe
+                        title="Plate"
+                        loading="lazy"
+                        allowfullscreen
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        src="https://sketchfab.com/models/f3b33132f98e4f989a3ea12fad4e2132/embed"
+                    >
+                    </iframe>
+
+                </div>
+
+                <div class="model-info">
+
+                    <h3>
+                        Commercial Product Models
+                    </h3>
+
+                    <p>
+                        3D models created in Blender for a company commission.
+                    </p>
+
+                    <div class="meta">
+
+                        <span class="tag">
+                            Blender
+                        </span>
+
+                        <span class="tag">
+                            Product Modeling
+                        </span>
+
+                        <span class="tag">
+                            Commercial Work
+                        </span>
+
+                        <span class="tag">
+                            Rendering
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="plate-gallery">
+
+                <a href="images/PlateRendered.png" target="_blank">
+                    <figure>
+                        <img
+                            src="images/PlateRendered.png"
+                            alt="Final rendered plate model"
+                        >
+                        <figcaption>Plate Rendered</figcaption>
+                    </figure>
+                </a>
+
+                <a href="images/PlateMesh.png" target="_blank">
+                    <figure>
+                        <img
+                            src="images/PlateMesh.png"
+                            alt="Plate model mesh"
+                        >
+                        <figcaption>Plate Mesh</figcaption>
+                    </figure>
+                </a>
+
+            </div>
+
+            <div class="commercial-render">
+
+                <a href="images/CompositionRender.png" target="_blank">
+                    <figure>
+                        <img
+                            src="images/CompositionRender.png"
+                            alt="Composition of product models created for a company commission"
+                        >
+                        <figcaption>Composition Render</figcaption>
+                    </figure>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
         <!--
-            NEXT PROJECTS:
-            Add the katana project and company product work here later.
-            Use the same model-project structure to keep the portfolio consistent.
+            NEXT PROJECT:
+            Add the katana project here later.
         -->
 
 
