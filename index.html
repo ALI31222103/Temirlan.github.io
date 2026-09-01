@@ -294,19 +294,57 @@
             margin-top: 18px;
 
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
 
             gap: 14px;
+        }
+
+        .breakdown a,
+        .project-gallery a {
+            display: block;
+            background: #0d1014;
+            border: 1px solid #272c34;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.2s ease;
+        }
+
+        .breakdown a:hover,
+        .project-gallery a:hover {
+            border-color: #535c68;
+            transform: translateY(-3px);
         }
 
         .breakdown img {
             width: 100%;
             height: auto;
+        }
 
-            border-radius: 12px;
-            border: 1px solid #272c34;
+        .project-gallery {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
 
-            background: #1a1e24;
+        .project-gallery figure {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-gallery img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            background: #090b0e;
+        }
+
+        .project-gallery figcaption {
+            padding: 11px 13px;
+            color: #aeb5bf;
+            font-size: 13px;
+            border-top: 1px solid #272c34;
         }
 
         /* =========================
@@ -453,6 +491,10 @@
             }
 
             .breakdown {
+                grid-template-columns: 1fr;
+            }
+
+            .project-gallery {
                 grid-template-columns: 1fr;
             }
 
@@ -789,15 +831,26 @@
 
             <div class="breakdown">
 
-                <img
-                    src="images/ant-render.jpg"
-                    alt="Final Character Render"
-                >
+                <a href="images/AntRendered.png" target="_blank">
+                    <img
+                        src="images/AntRendered.png"
+                        alt="Final render of the game-ready ant character"
+                    >
+                </a>
 
-                <img
-                    src="images/ant-wireframe.jpg"
-                    alt="Character Wireframe"
-                >
+                <a href="images/AntSetka.png" target="_blank">
+                    <img
+                        src="images/AntSetka.png"
+                        alt="Wireframe of the ant character"
+                    >
+                </a>
+
+                <a href="images/model-ant.jpg" target="_blank">
+                    <img
+                        src="images/model-ant.jpg"
+                        alt="Ant character model in Blender"
+                    >
+                </a>
 
             </div>
 
@@ -806,64 +859,118 @@
 
 
 
-        <!-- MODEL 2 -->
+        <!-- PROJECT ZOMBIE -->
 
         <article class="model-project">
 
+            <div class="model-info">
 
-            <div class="model-grid">
+                <h3>
+                    Project Zombie
+                </h3>
 
+                <p>
+                    A selection of 3D assets created in Blender for a zombie
+                    game project and tested inside a Unity scene. The gallery
+                    includes the Zombie Frog and Zombie Dog models together
+                    with their in-game appearance.
+                </p>
 
-                <div class="viewer">
+                <div class="meta">
 
-                    <iframe
-                        title="3D Model"
-                        allowfullscreen
-                        allow="autoplay; fullscreen; xr-spatial-tracking"
-                        src="https://sketchfab.com/models/YOUR_SECOND_MODEL_ID/embed"
-                    >
-                    </iframe>
+                    <span class="tag">
+                        Blender
+                    </span>
 
-                </div>
+                    <span class="tag">
+                        Unity
+                    </span>
 
+                    <span class="tag">
+                        3D Modeling
+                    </span>
 
-
-                <div class="model-info">
-
-                    <h3>
-                        3D Model
-                    </h3>
-
-                    <p>
-                        Additional game-ready 3D work created
-                        using Blender.
-                    </p>
-
-
-                    <div class="meta">
-
-                        <span class="tag">
-                            Blender
-                        </span>
-
-                        <span class="tag">
-                            Modeling
-                        </span>
-
-                        <span class="tag">
-                            Texturing
-                        </span>
-
-                    </div>
-
+                    <span class="tag">
+                        Game Assets
+                    </span>
 
                 </div>
-
 
             </div>
 
+            <div class="project-gallery">
+
+                <a href="images/SceneZombieGame.png" target="_blank">
+                    <figure>
+                        <img
+                            src="images/SceneZombieGame.png"
+                            alt="Project Zombie game scene in Unity"
+                        >
+                        <figcaption>Game scene in Unity</figcaption>
+                    </figure>
+                </a>
+
+                <a href="images/Снимок2.PNG" target="_blank">
+                    <figure>
+                        <img
+                            src="images/Снимок2.PNG"
+                            alt="Project Zombie gameplay screenshot"
+                        >
+                        <figcaption>Gameplay screenshot</figcaption>
+                    </figure>
+                </a>
+
+                <a href="images/model-ZombieFrog.PNG" target="_blank">
+                    <figure>
+                        <img
+                            src="images/model-ZombieFrog.PNG"
+                            alt="Zombie Frog model in Blender"
+                        >
+                        <figcaption>Zombie Frog — Blender viewport</figcaption>
+                    </figure>
+                </a>
+
+                <a href="images/ZombieFrog.PNG" target="_blank">
+                    <figure>
+                        <img
+                            src="images/ZombieFrog.PNG"
+                            alt="Zombie Frog model preview"
+                        >
+                        <figcaption>Zombie Frog model</figcaption>
+                    </figure>
+                </a>
+
+                <a href="images/ZombieDog.png" target="_blank">
+                    <figure>
+                        <img
+                            src="images/ZombieDog.png"
+                            alt="Zombie Dog model in Blender"
+                        >
+                        <figcaption>Zombie Dog — Blender viewport</figcaption>
+                    </figure>
+                </a>
+
+                <a href="images/Снимок.PNG" target="_blank">
+                    <figure>
+                        <img
+                            src="images/Снимок.PNG"
+                            alt="Project Zombie in-game scene"
+                        >
+                        <figcaption>In-game scene</figcaption>
+                    </figure>
+                </a>
+
+            </div>
 
         </article>
+
+
+
+        <!--
+            NEXT PROJECTS:
+            Add the katana project and company product work here later.
+            Use the same model-project structure to keep the portfolio consistent.
+        -->
 
 
     </div>
